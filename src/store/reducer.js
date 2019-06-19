@@ -35,6 +35,13 @@ const reducer = (state = initialState, action) => {
                                                          // this is important as to not update the results state directly
 
           }
+          
+    case "DELETE_RESULT":
+        const updatedArray = state.results.filter(result => result.id!== action.resultElId )
+            return {
+                ...state,
+              results: updatedArray
+            };
   }
 
   return state;
